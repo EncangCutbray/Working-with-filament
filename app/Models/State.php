@@ -8,15 +8,19 @@ class State extends Model
 {
     use Sushi;
 
+    protected $guarded = [];
+
     protected $schema = [
-        'id' => 'integer',
-        'name' => 'string',
-        'symbol' => 'string',
-        'precision' => 'float'
+        'name'      => 'string',
+        'email'     => 'string',
     ];
 
     public function getRows()
     {
-        return [];
+        return [
+            ['name' => 1, 'email' => 'admin'],
+            ['name' => 2, 'email' => 'manager'],
+            ['name' => 3, 'email' => 'user'],
+        ];
     }
 }
